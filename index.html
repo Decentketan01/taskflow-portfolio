@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TaskFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<body>
+  <div class="cursor"></div>
+
+  <!-- Layered Morphing Blob Background -->
+  <svg
+    class="illustration-bg"
+    viewBox="0 0 1440 900"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <!-- SVG content stays EXACTLY the same -->
+  </svg>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-content reveal">
+        <span class="eyebrow">Frontend Developer</span>
+
+        <h1>
+          I build calm, interactive<br />
+          web experiences.
+        </h1>
+
+        <p class="hero-subtitle">
+          Focused on thoughtful UI, micro-interactions, and
+          clean JavaScript architecture.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary magnetic haptic">
+            View Projects
+          </a>
+          <a href="#contact" class="btn secondary haptic">
+            Contact Me
+          </a>
+        </div>
+
+        <p class="hero-proof">
+          Currently building with Vanilla JS · CSS · UX systems
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PROJECT DEMO ================= -->
+    <section id="projects" class="app">
+      <header class="reveal">
+        <h2>TaskFlow</h2>
+        <p class="subtitle">A gentle space to organize your day</p>
+      </header>
+
+      <section class="task-input reveal">
+        <input type="text" id="taskInput" placeholder="What’s on your mind?" />
+        <button id="addTaskBtn" class="magnetic haptic">Add</button>
+      </section>
+
+      <section class="filters reveal">
+        <button data-filter="all" class="haptic">All</button>
+        <button data-filter="completed" class="haptic">Done</button>
+        <button data-filter="pending" class="haptic">Pending</button>
+      </section>
+
+      <ul id="taskList" class="reveal"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

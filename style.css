@@ -1,0 +1,304 @@
+/* ------------------ BASE ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #faf7f2;
+  --sage: #9db8a0;
+  --terracotta: #d88c6a;
+  --ink: #2f2f2f;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* ------------------ CUSTOM CURSOR ------------------ */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(216, 140, 106, 0.3);
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  z-index: 999;
+}
+
+/* ------------------ APP ------------------ */
+.app {
+  width: 100%;
+  max-width: 440px;
+  padding: 32px;
+  border-radius: 32px;
+  background: var(--cream);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ------------------ HEADER ------------------ */
+header {
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+/* ------------------ INPUT ------------------ */
+.task-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 24px;
+  border: none;
+  background: #fff;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+
+/* ------------------ MAGNETIC BUTTON ------------------ */
+.task-input button {
+  padding: 14px 22px;
+  border-radius: 24px;
+  border: none;
+  background: var(--terracotta);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+/* ------------------ FILTERS ------------------ */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.filters button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+/* ------------------ TASK LIST ------------------ */
+ul {
+  list-style: none;
+}
+
+li {
+  background: white;
+  border-radius: 24px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  animation: rise 0.4s ease;
+}
+
+/* ------------------ TASK LEFT ------------------ */
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--sage);
+  transition: all 0.3s ease;
+}
+
+.check.checked {
+  background: var(--sage);
+  transform: scale(1.2);
+}
+
+.task-text {
+  transition: opacity 0.3s ease;
+}
+
+.completed .task-text {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+/* ------------------ DELETE ------------------ */
+li button {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ------------------ ANIMATION ------------------ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* -------- SCROLL REVEAL -------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* -------- HAPTIC FEEL -------- */
+.haptic {
+  transition: transform 0.12s ease;
+}
+
+.haptic:active {
+  transform: scale(0.96);
+}
+/* -------- ILLUSTRATION BACKGROUND -------- */
+.illustration-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+.illustration-bg path {
+  transform-origin: center;
+  animation: floatBlob 18s ease-in-out infinite alternate;
+}
+
+#blob2 {
+  animation-duration: 24s;
+}
+
+@keyframes floatBlob {
+  from {
+    transform: translateY(0px) translateX(0px);
+  }
+  to {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+/* ================= PORTFOLIO HERO ================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 720px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Small role label */
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+/* Headline */
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  color: #555;
+}
+
+/* Actions */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+  background: #d88c6a;
+  color: white;
+  box-shadow: 0 12px 24px rgba(216, 140, 106, 0.25);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Proof text */
+.hero-proof {
+  font-size: 0.8rem;
+  color: #777;
+}
