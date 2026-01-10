@@ -1,4 +1,4 @@
-/// STATE
+/// STATE OF JS
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 /// DOM ELEMENTS
@@ -7,7 +7,7 @@ const taskList = document.getElementById("taskList");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const filterBtns = document.querySelectorAll("[data-filter]");
 
-/// ADDING TASK LOGIC
+/// ADDING TASK LOGIC 
 addTaskBtn.addEventListener("click", () => {
   if (taskInput.value.trim() === "") return;
 
@@ -151,4 +151,5 @@ document.addEventListener("mousemove", e => {
 
   svgBg.style.transform = `translate(${x}px, ${y}px)`;
 });
+
 
