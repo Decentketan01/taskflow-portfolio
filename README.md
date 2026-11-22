@@ -2,8 +2,6 @@
 
 A warm, interactive portfolio website featuring **Soft UI design**, **scroll-triggered animations**, and an embedded **TaskFlow task manager** built with **Vanilla JavaScript**.
 
-## 🌐 Live Demo ![click-here](https://github.com/user-attachments/assets/221e4334-094a-43da-bae3-96ee05bedbfd)
-
 https://decentketan01.github.io/taskflow-portfolio/#projects
 
 ---
